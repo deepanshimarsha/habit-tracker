@@ -1,5 +1,4 @@
 import { useHabitContext } from "../context/HabitContext";
-import HabitCard from "../component/HabitCard/HabitCard";
 
 export default function Archive() {
   const { state } = useHabitContext();
