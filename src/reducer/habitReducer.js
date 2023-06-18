@@ -34,7 +34,7 @@ export const habitReducer = (state, action) => {
         };
       }
     }
-
+    // eslint-disable-next-line
     case "ADD_NEW_HABIT": {
       return {
         ...state,
