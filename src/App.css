@@ -40,3 +40,14 @@
   display: block;
   
 }
+.topNav {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.habit-main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 300px;
+  margin-top: 50px;
+}

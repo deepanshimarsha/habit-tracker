@@ -1,0 +1,13 @@
+.habit-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.rows{
+    padding: 5px;
+}
+.columns{
+padding: 5px;
+}
