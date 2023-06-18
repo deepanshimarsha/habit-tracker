@@ -42,7 +42,7 @@ export default function EditModalForm(habit) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header>
-          <Modal.Title>New Habit</Modal.Title>
+          <Modal.Title>Edit Habit</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
@@ -66,7 +66,7 @@ export default function EditModalForm(habit) {
                 <input
                   onChange={(e) =>
                     dispatch({
-                      type: "SET_NEW_HABIT",
+                      type: "EDIT_NEW_HABIT",
                       field: "NAME",
                       data: e.target.value,
                     })
@@ -87,7 +87,7 @@ export default function EditModalForm(habit) {
                 <select
                   onChange={(e) =>
                     dispatch({
-                      type: "SET_NEW_HABIT",
+                      type: "EDIT_NEW_HABIT",
                       field: "GOAL",
                       data: e.target.value,
                     })
@@ -107,7 +107,7 @@ export default function EditModalForm(habit) {
                 <select
                   onChange={(e) =>
                     dispatch({
-                      type: "SET_NEW_HABIT",
+                      type: "EDIT_NEW_HABIT",
                       field: "REPEAT",
                       data: e.target.value,
                     })
@@ -135,7 +135,7 @@ export default function EditModalForm(habit) {
                 <select
                   onChange={(e) =>
                     dispatch({
-                      type: "SET_NEW_HABIT",
+                      type: "EDIT_NEW_HABIT",
                       field: "TIME",
                       data: e.target.value,
                     })
@@ -157,7 +157,7 @@ export default function EditModalForm(habit) {
                 <select
                   onChange={(e) =>
                     dispatch({
-                      type: "SET_NEW_HABIT",
+                      type: "EDIT_NEW_HABIT",
                       field: "DATE",
                       data: e.target.value,
                     })

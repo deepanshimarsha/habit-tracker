@@ -34,6 +34,38 @@ export const habitReducer = (state, action) => {
         };
       }
     }
+    case "EDIT_NEW_HABIT": {
+      if (action.field === "NAME") {
+        return {
+          ...state,
+          newHabit: { ...state.newHabit, name: action.data },
+        };
+      }
+      if (action.field === "GOAL") {
+        return {
+          ...state,
+          newHabit: { ...state.newHabit, goal: action.data },
+        };
+      }
+      if (action.field === "REPEAT") {
+        return {
+          ...state,
+          newHabit: { ...state.newHabit, repeat: action.data },
+        };
+      }
+      if (action.field === "TIME") {
+        return {
+          ...state,
+          newHabit: { ...state.newHabit, time: action.data },
+        };
+      }
+      if (action.field === "DATE") {
+        return {
+          ...state,
+          newHabit: { ...state.newHabit, date: action.data },
+        };
+      }
+    }
     // eslint-disable-next-line
     case "ADD_NEW_HABIT": {
       return {
