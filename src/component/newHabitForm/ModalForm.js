@@ -6,7 +6,6 @@ export default function ModalDialog() {
   const { state, dispatch } = useHabitContext();
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
-  console.log(state);
 
   const handleShow = () => setShow(true);
   const handleClose = () => {
