@@ -2,6 +2,9 @@ import { useHabitContext } from "../context/HabitContext";
 
 export default function Archive() {
   const { state } = useHabitContext();
+  if (!state.archive.length) {
+    return <h3 style={{ marginTop: "50px" }}>Archive is empty!</h3>;
+  }
   return (
     <div className="habit-main">
       {state.archive.map((habit) => {
