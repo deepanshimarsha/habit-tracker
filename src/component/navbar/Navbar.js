@@ -1,9 +1,9 @@
-import { NavLink } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 export default function NavPills() {
   return (
     <div className="topNav" style={{ textAlign: "center" }}>
       <ul class="nav nav-pills">
-        <li class="active">
+        <li>
           {" "}
           <NavLink className="nav-link" to="/">
             Habits
@@ -11,7 +11,7 @@ export default function NavPills() {
         </li>
         <li>
           {" "}
-          <NavLink className="nav-link" to="/archives">
+          <NavLink className="nav-link" to="/archive">
             Archives
           </NavLink>
         </li>

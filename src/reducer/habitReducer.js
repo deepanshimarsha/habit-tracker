@@ -47,6 +47,38 @@ export const habitReducer = (state, action) => {
         newHabit: {},
       };
     }
+    case "DELETE_HABIT": {
+      let filteredHabit = state.allHabits.slice();
+      filteredHabit = filteredHabit.filter(({ id }) => id !== action.id);
+      return {
+        ...state,
+        allHabits: filteredHabit,
+      };
+    }
+    case "ARCHIVE": {
+      return {
+        ...state,
+        archive: [...state.archive, action.habit],
+      };
+    }
+    case "EDIT_HABIT": {
+      return {
+        ...state,
+        newHabit: action.habit,
+      };
+    }
+    case "UPDATE_HABIT_IN_ALL_HABIT": {
+      return {
+        ...state,
+        allHabits: state.allHabits.map((habit) => {
+          if (habit.id === state.newHabit.id) {
+            return state.newHabit;
+          } else {
+            return habit;
+          }
+        }),
+      };
+    }
     default:
       throw new Error("Unknown action type");
   }

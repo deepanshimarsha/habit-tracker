@@ -2,13 +2,12 @@ import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useHabitContext } from "../../context/HabitContext";
 
-export default function ModalDialog() {
+export default function EditModalForm(habit) {
   const { state, dispatch } = useHabitContext();
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   console.log(state);
 
-  const handleShow = () => setShow(true);
   const handleClose = () => {
     setError("");
     dispatch({ type: "CLEAR_NEW_HABIT" });
@@ -22,17 +21,25 @@ export default function ModalDialog() {
       setError("Fill all the fields");
     } else {
       setError("");
-      dispatch({ type: "ADD_NEW_HABIT" });
+      dispatch({ type: "UPDATE_HABIT_IN_ALL_HABIT" });
       dispatch({ type: "CLEAR_NEW_HABIT" });
       setShow(false);
     }
   };
 
+  const handleUpdate = () => {
+    dispatch({ type: "EDIT_HABIT", habit: habit });
+    setShow(true);
+  };
+
   return (
     <>
-      <Button variant="success" onClick={handleShow}>
-        Create New Habit
-      </Button>
+      <div>
+        <span class="dropdown-item" onClick={handleUpdate}>
+          <i class="fa fa-edit"></i> Update
+        </span>
+      </div>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>New Habit</Modal.Title>

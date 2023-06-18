@@ -1,5 +1,9 @@
 import "./habit-card.css";
+import { useHabitContext } from "../../context/HabitContext";
+import DetailModal from "../HabitDetail/DetailModal";
+import EditModalForm from "../EditHabit/EditModalForm";
 export default function HabitCard(habit) {
+  const { dispatch } = useHabitContext();
   return (
     <div class="containers">
       <div class="rows">
@@ -14,24 +18,42 @@ export default function HabitCard(habit) {
                 ></i>
                 <ul class="dropdown-menu">
                   <li>
-                    <span class="dropdown-item">
+                    {/* <span
+                      class="dropdown-item"
+                      onClick={() =>
+                        dispatch({ type: "EDIT_HABIT", habit: habit })
+                      }
+                    >
                       <i class="fa fa-edit"></i> Update
-                    </span>
+                    </span> */}
+                    <EditModalForm {...habit} />
                   </li>
                   <li>
-                    <span class="dropdown-item">
+                    <span
+                      class="dropdown-item"
+                      onClick={() =>
+                        dispatch({ type: "DELETE_HABIT", id: habit.id })
+                      }
+                    >
                       <i class="fa fa-trash-o"></i> Delete
                     </span>
                   </li>
                   <li>
-                    <span class="dropdown-item">
+                    <span
+                      class="dropdown-item"
+                      onClick={() =>
+                        dispatch({ type: "ARCHIVE", habit: habit })
+                      }
+                    >
                       <i class="fa fa-archive"></i> Archive
                     </span>
                   </li>
                 </ul>
               </div>
               <div className="habit-name">
-                <span>{habit.name}</span>
+                <span>
+                  <DetailModal {...habit} />
+                </span>
               </div>
             </div>
           </div>

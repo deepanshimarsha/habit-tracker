@@ -8,6 +8,7 @@ const HabitContextProvider = ({ children }) => {
   const initialState = {
     allHabits: habits,
     newHabit: {},
+    archive: [],
   };
 
   const [state, dispatch] = useReducer(habitReducer, initialState);

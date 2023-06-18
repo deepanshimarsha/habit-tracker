@@ -8,9 +8,6 @@ export default function Home() {
     <div className="habit-main">
       <ModalForm />
       {state.allHabits.map((habit) => {
-        {
-          console.log(habit);
-        }
         return <HabitCard {...habit} />;
       })}
     </div>
