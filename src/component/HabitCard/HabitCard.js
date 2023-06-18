@@ -41,9 +41,10 @@ export default function HabitCard(habit) {
                   <li>
                     <span
                       class="dropdown-item"
-                      onClick={() =>
-                        dispatch({ type: "ARCHIVE", habit: habit })
-                      }
+                      onClick={() => {
+                        dispatch({ type: "ARCHIVE", habit: habit });
+                        dispatch({ type: "DELETE_HABIT", id: habit.id });
+                      }}
                     >
                       <i class="fa fa-archive"></i> Archive
                     </span>

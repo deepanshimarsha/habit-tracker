@@ -112,6 +112,13 @@ export const habitReducer = (state, action) => {
         }),
       };
     }
+    case "UNDO_ARCHIVE_HABIT": {
+      return {
+        ...state,
+        allHabits: [...state.allHabits, action.habit],
+        archive: state.archive.filter(({ id }) => id !== action.habit.id),
+      };
+    }
     default:
       throw new Error("Unknown action type");
   }
